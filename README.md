@@ -5,7 +5,7 @@
 This project examines financial performance, workforce trends, trade variations, and business resilience during the pandemic.  
 
 ## 📁 Repository Structure  
-- 📂 **Notebooks:** Jupyter Notebooks for **EDA, Hypothesis Testing, and Visualisations**  
+- 📂 **Notebooks:** Jupyter Notebooks for **EDA, Hypothesis Testing, and Story telling and Visualisations**  
 - 📂 **Data:** Raw datasets and Processed datasets  
 - 📂 **Scripts:** Python scripts for **data cleaning & analysis**  
 - 📂 **Figures:** Final **charts & visualisations**  
