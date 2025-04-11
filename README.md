@@ -13,7 +13,7 @@ This project examines financial performance, workforce trends, trade variations,
 ## Key Findings  
 
 
-## 🚀 Technologies Used  
+## Technologies Used  
 - **Python (Pandas, NumPy, Matplotlib, Seaborn, SciPy)**  
 - **Jupyter Notebook / Google Colab**  
 - **GitHub for version control**  
