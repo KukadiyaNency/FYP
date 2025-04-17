@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.express as px
 
 st.set_page_config(page_title='Sectoral Impact Analysis of COVID-19 in the UK', page_icon=':chart_with_upwards_trend:', layout='wide')
