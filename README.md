@@ -22,7 +22,7 @@ This project investigates how the COVID-19 pandemic influenced the UK business e
 🛠️ Strategic Business Adaptations
 
 ## Repository Structure  
-- **Notebooks:** Jupyter Notebooks for **EDA, Hypothesis Testing**  
+- **Notebooks:** Jupyter Notebooks for **EDA (Exploratory Data Anlysis), Hypothesis Testing**  
 - **Data:** Raw datasets and Processed datasets  
 - **Scripts:** Python scripts for **data cleaning & analysis**  
 - **Figures:** Final **Exported charts, figures and dashboard screenshots**
