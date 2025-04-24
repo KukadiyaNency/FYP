@@ -64,7 +64,7 @@ def sector_insights_page():
     st.write("This section will show visual comparisons across variables and sectors.")
 
     # Set the folder path for your images
-    image_folder = "https://github.com/KukadiyaNency/FYP/tree/main/Images_Data"
+    image_folder = "Images_Data"
 
     # Dictionary of sectoral themes and filenames
     sector_images = {
