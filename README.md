@@ -23,7 +23,7 @@ This project investigates how the COVID-19 pandemic influenced the UK business e
 
 ## Repository Structure  
 - **Notebooks:** Jupyter Notebooks for **EDA (Exploratory Data Anlysis), Hypothesis Testing**  
-- **Data:** Raw datasets and Processed datasets  
+- **Data:** Raw datasets and Processed datasets and Trend plots(Images_Data)
 - **Scripts:** Python scripts for **data cleaning & analysis**  
 - **Figures:** Final **Exported charts, figures and dashboard screenshots**
 - **Streamlit_dashboard** Streamlit app files
