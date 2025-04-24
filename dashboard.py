@@ -99,7 +99,7 @@ def sector_insights_page():
         if os.path.exists(image_path):
             with st.expander(title):
                 image = Image.open(image_path)
-                st.image(image, use_column_width=True)
+                st.image(image, use_container_width=True)
         else:
             st.warning(f"Image for '{title}' not found at {image_path}")
                 
