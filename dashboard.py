@@ -250,22 +250,19 @@ def key_takeaways_page():
     # Visualisations - Based on insights & display charts
     st.markdown("### :chart_with_upwards_trend: Visualizations")
 
-    # Display charts for each sector (you should replace these with actual data)
+    # Generating charts for selected sector
     if selected_sector == "Hospitality":
         fig = px.line(x=["2020", "2021"], y=[24, 21], title="Hospitality Turnover Change (%)")
-	st.plotly_chart(fig)
     elif selected_sector == "Retail":
         fig = px.bar(x=["2020", "2021"], y=[11, 15], title="Retail Furlough Usage (%)")
-	st.plotly_chart(fig)
     elif selected_sector == "Manufacturing":
         fig = px.area(x=["2020", "2021"], y=[10.2, 9.7], title="Manufacturing Turnover Change (%)")
-	st.plotly_chart(fig)
     elif selected_sector == "Transport":
         fig = px.line(x=["2020", "2021"], y=[36, 35], title="Transport Export Proportion (%)")
-	st.plotly_chart(fig)
     elif selected_sector == "Information":
         fig = px.bar(x=["2020", "2021"], y=[47.8, 49.1], title="Information Export Challenges (%)")
-	st.plotly_chart(fig)
+
+    st.plotly_chart(fig, use_container_width=True)
 
     #--- Download_Options ---
     # Insight Download (text file)...
@@ -316,7 +313,7 @@ def interactive_dashboard_page():
 
     chart_type = st.selectbox(":bar_chart: Select Chart Type", ["Line Chart", "Bar Chart", "Area Chart"])
 
-    # Plot the selected metric(s)
+    # Plot the selected metrics
     for val_col in value_columns:
         if chart_type == "Line Chart":
             fig = px.line(df, x=date_col, y=val_col, markers=True, title=f"{val_col} Over Time")
