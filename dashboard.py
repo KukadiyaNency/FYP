@@ -301,8 +301,8 @@ def hypothesis_page():
             for insight in sector_insights:
                 st.markdown(f"- {insight}")
         
-            # Add visualisation section here
-            st.subheader(f"Visual Analysis for {sector}")
+                # Add visualisation section here
+                st.subheader(f"Visual Analysis for {sector}")
                 
                 # Create visualizations based on actual results
                 if sector == "Hospitality":
