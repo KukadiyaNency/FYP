@@ -250,51 +250,6 @@ def sector_insights_page():
     else:
         st.warning(f"Image for '{title}' not found at {image_path}")
 
-                
-# -------------------------
-# Page 3: Hypothesis Testing
-# -------------------------
-def hypothesis_page():
-    st.title(":test_tube: Hypothesis Testing")
-    st.write("This page will present early vs. late period comparisons and T-test results.")
-
-    st.markdown("""
-    This section presents the outcomes of **independent t-tests** performed to compare business metrics between the **early pandemic period (pre-2021)** and **later period (post-2021)**.
-    
-    Each insight below states whether the difference was **statistically significant** or not, along with key figures such as proportions and p-values.
-    """)
-
-    insights = {
-        "Hospitality": [
-            ":x: **Turnover (↑/↓ up to 20%)** — No significant difference (p = 0.67). Proportion early: 24.5%, late: 25.1%",
-            ":x: **Import Challenges** — No significant change (p = 0.73). Proportion facing import issues: early 31.2%, late 30.8%",
-            ":x: **Govt Scheme Usage (Job Retention Bonus)** — No significant change (p = 0.59). Uptake remained ~13%",
-        ],
-        "Retail": [
-            ":white_check_mark: **Export not affected** — Significant increase (p = 0.0328). Proportion early: 35.4%, late: 41.2%",
-            ":x: **Exporting less than normal** — No significant change (p = 0.21). Proportion early: 22.7%, late: 21.3%",
-            ":x: **Turnover change** — No significant differences (p > 0.05). Stable around 27% reporting increases/decreases up to 20%",
-            ":x: **Furlough Usage** — No significant difference (p = 0.61). Proportion stayed around 11%",
-        ],
-        "Manufacturing": [
-            ":x: **Furlough Use** — No significant change (p = 0.47). Proportion early: 13.1%, late: 12.6%",
-            ":x: **Remote Working** — No significant difference (p = 0.62). Around 21% throughout",
-            ":x: **Turnover changes (20-50%)** — Not significant (p = 0.57). Proportion early: 10.2%, late: 9.7%",
-            ":x: **Govt Scheme (JRB)** — No significant change (p = 0.69). Uptake stayed under 15%",
-        ],
-        "Transport and Storage": [
-            ":x: **Stopped Exporting** — No significant change (p = 0.48). Proportion early: 9.5%, late: 9.1%",
-            ":x: **Export not affected** — No significant difference (p = 0.51). Around 36%",
-            ":x: **Import Challenges** — No significant change (p = 0.74). Proportion: early 33.2%, late 33.6%",
-            ":x: **Scheme Usage (JRB)** — No significant difference (p = 0.67). ~12% uptake overall",
-        ],
-        "Information and Communication": [
-            ":x: **Export not affected** — No significant difference (p = 0.71). Early: 47.8%, late: 49.1%",
-            ":x: **Exporting less than normal** — Not significant (p = 0.64). Early: 19.6%, late: 20.3%",
-            ":x: **Govt Schemes (Kickstart / JRB)** — No significant change (p = 0.52). ~14.2% used any scheme",
-        ]
-    }
-
 # -------------------------
 # Page 3: Hypothesis Testing
 # -------------------------
