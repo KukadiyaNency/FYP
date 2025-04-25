@@ -295,58 +295,102 @@ def hypothesis_page():
         ]
     }
 
+# -------------------------
+# Page 3: Hypothesis Testing
+# -------------------------
+def hypothesis_page():
+    st.title(":test_tube: Hypothesis Testing")
+    st.write("This page will present early vs. late period comparisons and T-test results.")
+
+    st.markdown("""
+    This section presents the outcomes of **independent t-tests** performed to compare business metrics between the **early pandemic period (pre-2021)** and **later period (post-2021)**.
+    
+    Each insight below states whether the difference was **statistically significant** or not, along with key figures such as proportions and p-values.
+    """)
+
+    insights = {
+        "Hospitality": [
+            ":x: **Turnover (↑/↓ up to 20%)** — No significant difference (p = 0.67). Proportion early: 24.5%, late: 25.1%",
+            ":x: **Import Challenges** — No significant change (p = 0.73). Proportion facing import issues: early 31.2%, late 30.8%",
+            ":x: **Govt Scheme Usage (Job Retention Bonus)** — No significant change (p = 0.59). Uptake remained ~13%",
+        ],
+        "Retail": [
+            ":white_check_mark: **Export not affected** — Significant increase (p = 0.0328). Proportion early: 35.4%, late: 41.2%",
+            ":x: **Exporting less than normal** — No significant change (p = 0.21). Proportion early: 22.7%, late: 21.3%",
+            ":x: **Turnover change** — No significant differences (p > 0.05). Stable around 27% reporting increases/decreases up to 20%",
+            ":x: **Furlough Usage** — No significant difference (p = 0.61). Proportion stayed around 11%",
+        ],
+        "Manufacturing": [
+            ":x: **Furlough Use** — No significant change (p = 0.47). Proportion early: 13.1%, late: 12.6%",
+            ":x: **Remote Working** — No significant difference (p = 0.62). Around 21% throughout",
+            ":x: **Turnover changes (20-50%)** — Not significant (p = 0.57). Proportion early: 10.2%, late: 9.7%",
+            ":x: **Govt Scheme (JRB)** — No significant change (p = 0.69). Uptake stayed under 15%",
+        ],
+        "Transport and Storage": [
+            ":x: **Stopped Exporting** — No significant change (p = 0.48). Proportion early: 9.5%, late: 9.1%",
+            ":x: **Export not affected** — No significant difference (p = 0.51). Around 36%",
+            ":x: **Import Challenges** — No significant change (p = 0.74). Proportion: early 33.2%, late 33.6%",
+            ":x: **Scheme Usage (JRB)** — No significant difference (p = 0.67). ~12% uptake overall",
+        ],
+        "Information and Communication": [
+            ":x: **Export not affected** — No significant difference (p = 0.71). Early: 47.8%, late: 49.1%",
+            ":x: **Exporting less than normal** — Not significant (p = 0.64). Early: 19.6%, late: 20.3%",
+            ":x: **Govt Schemes (Kickstart / JRB)** — No significant change (p = 0.52). ~14.2% used any scheme",
+        ]
+    }
+
     # Creating loop to display insights by sector
     for sector, sector_insights in insights.items():
         with st.expander(f"{sector} Insights", expanded=False):
             for insight in sector_insights:
                 st.markdown(f"- {insight}")
         
-                # Add visualisation section here
-                st.subheader(f"Visual Analysis for {sector}")
-                
-                # Create visualizations based on actual results
-                if sector == "Hospitality":
-                    data = pd.DataFrame({
-                        "Period": ["Early", "Late"],
-                        "Proportion": [0.245, 0.251]  # Proportions from Hospitality
-                    })
-                elif sector == "Retail":
-                    data = pd.DataFrame({
-                        "Period": ["Early", "Late"],
-                        "Proportion": [0.354, 0.412]  # Proportions from Retail
-                    })
-                elif sector == "Manufacturing":
-                    data = pd.DataFrame({
-                        "Period": ["Early", "Late"],
-                        "Proportion": [0.131, 0.126]  # Proportions from Manufacturing
-                    })
-                elif sector == "Transport and Storage":
-                    data = pd.DataFrame({
-                        "Period": ["Early", "Late"],
-                        "Proportion": [0.095, 0.091]  # Proportions from Transport and Storage
-                    })
-                elif sector == "Information and Communication":
-                    data = pd.DataFrame({
-                        "Period": ["Early", "Late"],
-                        "Proportion": [0.478, 0.491]  # Proportions from Information and Communication
-                    })
+        # Add visualisation section here
+        st.subheader(f"Visual Analysis for {sector}")
         
-                
-                # To display bar chart...
-                st.write("Proportions for Early vs Late Period:")
-                fig, ax = plt.subplots()
-                sns.barplot(x="Period", y="Proportion", data=data, ax=ax)
-                ax.set_title(f"Proportions of {sector} Metrics (Early vs Late Period)")
-                                
-                # To annotate bars with proportions...
-                for p in ax.patches:
-                    ax.annotate(f'{p.get_height():.2f}', 
-                                (p.get_x() + p.get_width() / 2., p.get_height()), 
-                                ha='center', va='center', 
-                                fontsize=12, color='black', 
-                                xytext=(0, 9), textcoords='offset points')
-                        
-                st.pyplot(fig)
+        # Create visualizations based on actual results
+        if sector == "Hospitality":
+            data = pd.DataFrame({
+                "Period": ["Early", "Late"],
+                "Proportion": [0.245, 0.251]  # Proportions from Hospitality
+            })
+        elif sector == "Retail":
+            data = pd.DataFrame({
+                "Period": ["Early", "Late"],
+                "Proportion": [0.354, 0.412]  # Proportions from Retail
+            })
+        elif sector == "Manufacturing":
+            data = pd.DataFrame({
+                "Period": ["Early", "Late"],
+                "Proportion": [0.131, 0.126]  # Proportions from Manufacturing
+            })
+        elif sector == "Transport and Storage":
+            data = pd.DataFrame({
+                "Period": ["Early", "Late"],
+                "Proportion": [0.095, 0.091]  # Proportions from Transport and Storage
+            })
+        elif sector == "Information and Communication":
+            data = pd.DataFrame({
+                "Period": ["Early", "Late"],
+                "Proportion": [0.478, 0.491]  # Proportions from Information and Communication
+            })
+
+        
+        # To display bar chart...
+        st.write("Proportions for Early vs Late Period:")
+        fig, ax = plt.subplots()
+        sns.barplot(x="Period", y="Proportion", data=data, ax=ax)
+        ax.set_title(f"Proportions of {sector} Metrics (Early vs Late Period)")
+        
+        # To annotate bars with proportions...
+        for p in ax.patches:
+            ax.annotate(f'{p.get_height():.2f}', 
+                        (p.get_x() + p.get_width() / 2., p.get_height()), 
+                        ha='center', va='center', 
+                        fontsize=12, color='black', 
+                        xytext=(0, 9), textcoords='offset points')
+
+        st.pyplot(fig)
 
 # -------------------------
 # Page 4: Key Takeaways
