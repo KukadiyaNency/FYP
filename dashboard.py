@@ -100,8 +100,156 @@ def sector_insights_page():
             with st.expander(title):
                 image = Image.open(image_path)
                 st.image(image, use_container_width=True)
-        else:
-            st.warning(f"Image for '{title}' not found at {image_path}")
+
+            # --- Sector-specific markdown descriptions ---
+            if filename == "HF.png":
+                st.markdown("""
+                - 📉 Sharp decline in turnover during early pandemic phases.
+                - 🔄 Gradual recovery began in 2021 with hospitality reopenings.
+                - 🛑 Still lower than pre-pandemic turnover levels by end of 2021.
+                """)
+            elif filename == "HI.png":
+                st.markdown("""
+                - 📦 Imports were significantly disrupted in mid-2020.
+                - 🔧 Recovery was unstable, with repeated dips in 2021.
+                - 🚢 Supply chain remained a major concern.
+                """)
+            elif filename == "HW.png":
+                st.markdown("""
+                - 👥 Furlough usage peaked in 2020.
+                - ⬇️ Declined steadily through 2021.
+                - 📉 Indicates gradual workforce reintegration.
+                """)
+            elif filename == "HS.png":
+                st.markdown("""
+                - 💼 Scheme adoption increased quickly in late 2020.
+                - 🚀 High uptake of financial aid and Kickstart support.
+                - 🛠 Strategic shifts helped stabilize business operations.
+                """)
+            elif filename == "IF.png":
+                st.markdown("""
+                - 💻 Information sector remained stable overall.
+                - 💹 Minimal fluctuation shows sector resilience.
+                - 🌐 Digital demand offset financial stress.
+                """)
+            elif filename == "IE.png":
+                st.markdown("""
+                - 📦 Export activity saw slight fluctuations.
+                - 📊 Challenges remained consistent through 2021.
+                - 🌍 Sector less impacted by border constraints.
+                """)
+            elif filename == "II.png":
+                st.markdown("""
+                - 🚚 Imports held steady across both years.
+                - 🔄 Minor variability in mid-2021.
+                - 📈 Overall maintained operational flow.
+                """)
+            elif filename == "IW.png":
+                st.markdown("""
+                - 🧑‍💻 Remote work remained constant from 2020 to 2021.
+                - 🔐 High digital readiness enabled stable workforce strategies.
+                - 🚀 Limited furlough usage indicated continuity.
+                """)
+            elif filename == "IS.png":
+                st.markdown("""
+                - 📋 Strategic adaptations stable across timeline.
+                - 🧭 Minimal change suggests early planning.
+                - 🔐 Focus remained on digital and remote tools.
+                """)
+            elif filename == "MF.png":
+                st.markdown("""
+                - 📉 Turnover dipped mid-2020.
+                - ⚙️ Recovered gradually through 2021.
+                - 🛠 Still fell short of full recovery by year end.
+                """)
+            elif filename == "ME.png":
+                st.markdown("""
+                - 📦 Exports rebounded sharply post-2020.
+                - 📈 Significant improvements seen in Q2 2021.
+                - 🌍 Reflects restored global manufacturing demand.
+                """)
+            elif filename == "MI.png":
+                st.markdown("""
+                - 🚧 Imports fluctuated due to border regulations.
+                - 🧱 Noticeable disruption early on.
+                - 📊 Stabilized mid-2021 with gradual improvements.
+                """)
+            elif filename == "MW.png":
+                st.markdown("""
+                - 👷 Furlough usage saw major drops after Q1 2021.
+                - 🏭 Reinstatement linked to manufacturing restart.
+                - 🔁 Indicated improving business conditions.
+                """)
+            elif filename == "MS.png":
+                st.markdown("""
+                - 📊 Strategic adaptation consistent throughout.
+                - 💡 Shifted early to schemes like Job Retention Bonus.
+                - 🧩 Strategy helped support recovery trajectory.
+                """)
+            elif filename == "RF.png":
+                st.markdown("""
+                - 🛍 Retail turnover dipped in early 2020.
+                - 💳 Quick recovery driven by online transition.
+                - 🏬 In-store recovery remained limited.
+                """)
+            elif filename == "RE.png":
+                st.markdown("""
+                - 🌍 Export challenges grew post-2020.
+                - 📈 Rising trend into 2021.
+                - ⚠️ Reflects post-Brexit and pandemic complications.
+                """)
+            elif filename == "RI.png":
+                st.markdown("""
+                - 🧾 Import levels stayed relatively stable.
+                - 🚧 Minor interruptions mid-2020.
+                - 📦 Adapted to new supply dynamics by 2021.
+                """)
+            elif filename == "RW.png":
+                st.markdown("""
+                - 👥 High furlough in 2020.
+                - ⬆️ Spiked again in early 2021.
+                - 🛍 Indicative of recurring lockdown impact.
+                """)
+            elif filename == "RS.png":
+                st.markdown("""
+                - 💳 Adoption of strategic schemes increased in 2021.
+                - 🧰 Kickstart and JRB used extensively.
+                - 📉 Support trended down as recovery began.
+                """)
+            elif filename == "TF.png":
+                st.markdown("""
+                - 🚛 Transport turnover dropped heavily in 2020.
+                - 🚚 Gradual climb in 2021.
+                - ✈️ Air and freight movement affected overall performance.
+                """)
+            elif filename == "TE.png":
+                st.markdown("""
+                - 📦 Export proportions remained stable.
+                - 🔄 Slight variations, no significant disruptions.
+                - 🌍 Sector proved export-resilient.
+                """)
+            elif filename == "TI.png":
+                st.markdown("""
+                - 🚢 Import levels mostly consistent.
+                - 🔧 Small dips during 2020 restrictions.
+                - 🛠 Recovery evident by late 2021.
+                """)
+            elif filename == "TW.png":
+                st.markdown("""
+                - 👷 Furlough usage higher in 2020.
+                - ⬇️ Reduced steadily through 2021.
+                - 🧭 Workforce recovery in motion.
+                """)
+            elif filename == "TS.png":
+                st.markdown("""
+                - 🛠 Strategic adaptations stable.
+                - 🧰 Heavy reliance on government schemes early on.
+                - 🔄 Transitioned to operational independence in 2021.
+                """)
+
+    else:
+        st.warning(f"Image for '{title}' not found at {image_path}")
+
                 
 # -------------------------
 # Page 3: Hypothesis Testing
