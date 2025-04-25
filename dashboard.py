@@ -301,8 +301,8 @@ def hypothesis_page():
             for insight in sector_insights:
                 st.markdown(f"- {insight}")
         
-                # Add visualisation section here
-                st.subheader(f"Visual Analysis for {sector}")
+            # Add visualisation section here
+            st.subheader(f"Visual Analysis for {sector}")
                 
                 # Create visualizations based on actual results
                 if sector == "Hospitality":
@@ -332,7 +332,7 @@ def hypothesis_page():
                     })
         
                 
-                # To display bar chart...
+             # To display bar chart...
                 st.write("Proportions for Early vs Late Period:")
                 fig, ax = plt.subplots()
                 sns.barplot(x="Period", y="Proportion", data=data, ax=ax)
