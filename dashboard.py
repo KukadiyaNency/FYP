@@ -332,8 +332,8 @@ def hypothesis_page():
                     })
         
                 
-            # To display bar chart...
-                    st.write("Proportions for Early vs Late Period:")
+    # To display bar chart...
+    st.write("Proportions for Early vs Late Period:")
                     fig, ax = plt.subplots()
                     sns.barplot(x="Period", y="Proportion", data=data, ax=ax)
                     ax.set_title(f"Proportions of {sector} Metrics (Early vs Late Period)")
