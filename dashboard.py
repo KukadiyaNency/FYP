@@ -301,52 +301,52 @@ def hypothesis_page():
             for insight in sector_insights:
                 st.markdown(f"- {insight}")
         
-        # Add visualisation section here
-        st.subheader(f"Visual Analysis for {sector}")
+                # Add visualisation section here
+                st.subheader(f"Visual Analysis for {sector}")
+                
+                # Create visualizations based on actual results
+                if sector == "Hospitality":
+                    data = pd.DataFrame({
+                        "Period": ["Early", "Late"],
+                        "Proportion": [0.245, 0.251]  # Proportions from Hospitality
+                    })
+                elif sector == "Retail":
+                    data = pd.DataFrame({
+                        "Period": ["Early", "Late"],
+                        "Proportion": [0.354, 0.412]  # Proportions from Retail
+                    })
+                elif sector == "Manufacturing":
+                    data = pd.DataFrame({
+                        "Period": ["Early", "Late"],
+                        "Proportion": [0.131, 0.126]  # Proportions from Manufacturing
+                    })
+                elif sector == "Transport and Storage":
+                    data = pd.DataFrame({
+                        "Period": ["Early", "Late"],
+                        "Proportion": [0.095, 0.091]  # Proportions from Transport and Storage
+                    })
+                elif sector == "Information and Communication":
+                    data = pd.DataFrame({
+                        "Period": ["Early", "Late"],
+                        "Proportion": [0.478, 0.491]  # Proportions from Information and Communication
+                    })
         
-        # Create visualizations based on actual results
-        if sector == "Hospitality":
-            data = pd.DataFrame({
-                "Period": ["Early", "Late"],
-                "Proportion": [0.245, 0.251]  # Proportions from Hospitality
-            })
-        elif sector == "Retail":
-            data = pd.DataFrame({
-                "Period": ["Early", "Late"],
-                "Proportion": [0.354, 0.412]  # Proportions from Retail
-            })
-        elif sector == "Manufacturing":
-            data = pd.DataFrame({
-                "Period": ["Early", "Late"],
-                "Proportion": [0.131, 0.126]  # Proportions from Manufacturing
-            })
-        elif sector == "Transport and Storage":
-            data = pd.DataFrame({
-                "Period": ["Early", "Late"],
-                "Proportion": [0.095, 0.091]  # Proportions from Transport and Storage
-            })
-        elif sector == "Information and Communication":
-            data = pd.DataFrame({
-                "Period": ["Early", "Late"],
-                "Proportion": [0.478, 0.491]  # Proportions from Information and Communication
-            })
-
+                
+                # To display bar chart...
+                st.write("Proportions for Early vs Late Period:")
+                fig, ax = plt.subplots()
+                sns.barplot(x="Period", y="Proportion", data=data, ax=ax)
+                ax.set_title(f"Proportions of {sector} Metrics (Early vs Late Period)")
+                
+                # To annotate bars with proportions...
+                for p in ax.patches:
+                    ax.annotate(f'{p.get_height():.2f}', 
+                                (p.get_x() + p.get_width() / 2., p.get_height()), 
+                                ha='center', va='center', 
+                                fontsize=12, color='black', 
+                                xytext=(0, 9), textcoords='offset points')
         
-        # To display bar chart...
-        st.write("Proportions for Early vs Late Period:")
-        fig, ax = plt.subplots()
-        sns.barplot(x="Period", y="Proportion", data=data, ax=ax)
-        ax.set_title(f"Proportions of {sector} Metrics (Early vs Late Period)")
-        
-        # To annotate bars with proportions...
-        for p in ax.patches:
-            ax.annotate(f'{p.get_height():.2f}', 
-                        (p.get_x() + p.get_width() / 2., p.get_height()), 
-                        ha='center', va='center', 
-                        fontsize=12, color='black', 
-                        xytext=(0, 9), textcoords='offset points')
-
-        st.pyplot(fig)
+                st.pyplot(fig)
 
 # -------------------------
 # Page 4: Key Takeaways
