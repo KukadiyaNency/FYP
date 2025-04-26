@@ -133,7 +133,7 @@ def sector_insights_page():
                     """)
                 elif filename == "IW.png":
                     st.markdown("""
-                    - Information and communication mainly worked remotely throught the pandemic.
+                    - Information and communication mainly worked remotely throughout the pandemic.
                     """)
                 elif filename == "IS.png":
                     st.markdown("""
