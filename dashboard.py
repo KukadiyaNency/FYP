@@ -200,8 +200,8 @@ def sector_insights_page():
                     - Transportation didn't use any schemes but fewer did.
                     """)
 
-    else:
-        st.warning(f"Image for '{title}' not found at {image_path}")
+        else:
+            st.warning(f"Image for '{title}' not found at {image_path}")
 
 # -------------------------
 # Page 3: Hypothesis Testing
