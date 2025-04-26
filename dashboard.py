@@ -394,11 +394,11 @@ def interactive_dashboard_page():
 
     # File paths dictionary
     file_paths = {
-        "Financial": "/Users/macintosh/Desktop/Merged_data/Merged_Financial.csv",
-        "Export": "/Users/macintosh/Desktop/Merged_data/Merged_Export.csv",
-        "Import": "/Users/macintosh/Desktop/Merged_data/Merged_Import.csv",
-        "Workforce": "/Users/macintosh/Desktop/Merged_data/Merged_Workforce.csv",
-        "Strategic": "/Users/macintosh/Desktop/Merged_data/Merged_Strategic.csv"
+        "Financial": "Merged_data/Merged_Financial.csv",
+        "Export": "Merged_data/Merged_Export.csv",
+        "Import": "Merged_data/Merged_Import.csv",
+        "Workforce": "Merged_data/Merged_Workforce.csv",
+        "Strategic": "Merged_data/Merged_Strategic.csv"
 }
 
     selected_theme = st.selectbox(":open_file_folder: Select a Theme", list(file_paths.keys()))
