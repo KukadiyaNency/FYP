@@ -8,7 +8,7 @@ import os
 import io
 
 # Set page config
-st.set_page_config(page_title="Business Impact Dashboard", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Sectoral Impact Dashboard", page_icon=":bar_chart:", layout="wide")
 
 # Sidebar navigation
 st.sidebar.title(":blue_book: Navigation")
@@ -27,7 +27,7 @@ page = st.sidebar.radio("Go to", [
 def introduction_page():
     st.title(":open_book: Introduction")
     st.write("""
-    This project explores the **impact of unforeseen events, specifically the COVID-19 pandemic**, on the business landscape in the UK.
+    This project explores the **impact of unforeseen events, specifically the COVID-19 pandemic**, on the sectors in the UK.
     It focuses on five key sectors:
     - :hotel: Accommodation and Food Service Activities (Hospitality)
     - :shopping_bags: Wholesale and Retail Trade (Retail)
